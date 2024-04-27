@@ -132,7 +132,7 @@ u_int8_t g_fgIsOid = TRUE;
 #define  KGIDT_VALUE(v) v
 #endif
 
-const struct firmware *fw_entry;
+static const struct firmware *fw_entry;
 
 /* Default */
 static PUINT_8 apucFwName[] = {
