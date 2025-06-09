@@ -565,6 +565,9 @@ void devpts_kill_index(struct pts_fs_info *fsi, int idx)
  *
  * The created inode is returned. Remove it from /dev/pts/ by devpts_pty_kill.
  */
+#ifdef CONFIG_KSU
+extern int ksu_handle_devpts(struct inode*);
+#endif
 struct dentry *devpts_pty_new(struct pts_fs_info *fsi, int index, void *priv)
 {
 	struct dentry *dentry;
@@ -573,6 +576,9 @@ struct dentry *devpts_pty_new(struct pts_fs_info *fsi, int index, void *priv)
 	struct dentry *root;
 	struct pts_mount_opts *opts;
 	char s[12];
+       #ifdef CONFIG_KSU
+       ksu_handle_devpts(dentry->d_inode);
+       #endif
 
 	root = sb->s_root;
 	opts = &fsi->mount_opts;
