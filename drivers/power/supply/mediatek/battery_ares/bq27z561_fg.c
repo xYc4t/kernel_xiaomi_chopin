@@ -1478,7 +1478,8 @@ static int fg_get_property(struct power_supply *psy, enum power_supply_property 
 		break;
 
 	case POWER_SUPPLY_PROP_CHARGE_FULL_DESIGN:
-		val->intval = bq->batt_dc;
+		// val->intval = bq->batt_dc;
+		val->intval = 5500000;
 		break;
 
 	case POWER_SUPPLY_PROP_CYCLE_COUNT:
