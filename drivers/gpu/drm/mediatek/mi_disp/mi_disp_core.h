@@ -7,6 +7,7 @@
 #define _MI_DISP_CORE_H_
 
 #include "mi_disp_config.h"
+#include <linux/device.h>
 
 #define MI_DISPLAY_CLASS  "mi_display"
 #define MI_DISPLAY_PROCFS_DIR  "mi_display"
@@ -30,4 +31,3 @@ int mi_disp_core_init(void);
 void mi_disp_core_deinit(void);
 
 #endif /* _MI_DISP_CORE_H_ */
-
